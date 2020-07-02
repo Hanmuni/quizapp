@@ -2,9 +2,10 @@
     <head>
         <title>QuizApp</title>
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css"
+        <link rel="stylesheet" href="style.css">
+        <script src="questions.js"></script>
     </head>
-    <body> 
+    <body onload="nextQuestion()"> 
         <div class="card text-center">
             <div class="card-header">
                 <h1 >QuizApp</h1>
@@ -12,7 +13,7 @@
             <div class="card-body">
               <h5 class="card-title"> Guten Tag!</h5>
               <div class="card">
-                <div class="card-body">
+                <div class="card-body" id="question">
                   Hier ist die Frage!
                 </div>
               </div>
