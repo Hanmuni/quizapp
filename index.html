@@ -17,12 +17,20 @@
                 <div class="card-body" id="question">
                   Hier ist die Frage!
                 </div>
+
+                <div id="correct" class="alert alert-success d-none" role="alert">
+                  Es ist richtig!
+                </div>
+                
+                <div id="not-correct" class="alert alert-danger d-none" role="alert">
+                  Leider falsch!
+                </div>
               </div>
               <div class="mt-3">
-              <a href="#" onclick="answer('Primoballerinello')" id="answer1" class="btn btn-primary"> Antwort A </a> 
-              <a href="#" onclick="answer('Primoballerano')" id="answer2" class="btn btn-primary"> Antwort B </a>
-              <a href="#" onclick="answer('Primoballerini')" id="answer3" class="btn btn-primary"> Antwort C </a>
-              <a href="#" onclick="answer('Primoballerino')" id="answer4" class="btn btn-primary"> Antwort D </a>
+              <a href="#" onclick="answer(1)" id="answer1" class="btn btn-primary"> Antwort A </a> 
+              <a href="#" onclick="answer(2)" id="answer2" class="btn btn-primary"> Antwort B </a>
+              <a href="#" onclick="answer(3)" id="answer3" class="btn btn-primary"> Antwort C </a>
+              <a href="#" onclick="answer(4)" id="answer4" class="btn btn-primary"> Antwort D </a>
             </div>
             </div>
             <div class="card-footer text-muted">
