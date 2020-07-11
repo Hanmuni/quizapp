@@ -1,11 +1,20 @@
-
+let question_1 = 'Wie nennt man ein mit gebratenem Hackfleich belegtes Brötchen?';
+let question_2 = 'Zweite Frage';
 let answer_1 = 'Frankfurter';
 let answer_2 = 'Bremer';
 let answer_3 = 'Berliner';
 let answer_4 = 'Hamburger';
 
 function nextQuestion() {
-    document.getElementById('question').innerHTML = 'Wie nennt man ein mit gebratenem Hackfleich belegtes Brötchen?';
+    if (document.getElementById('question').innerHTML == question_1) {
+        document.getElementById('question').innerHTML = question_2;
+    }
+
+    else {
+        document.getElementById('question').innerHTML = question_1;
+    }
+
+    document.getElementById('question').innerHTML = question_1;
     document.getElementById('answer1').innerHTML = answer_1;
     document.getElementById('answer2').innerHTML = answer_2;
     document.getElementById('answer3').innerHTML = answer_3;
@@ -14,15 +23,15 @@ function nextQuestion() {
 
 function answer(a) {
 
-    if(a == 1) {
-        selected_answer = answer_1; 
+    if (a == 1) {
+        selected_answer = answer_1;
     }
 
-    else if(a == 2) {
+    else if (a == 2) {
         selected_answer = answer_2
 
     }
-    else if(a == 3) {
+    else if (a == 3) {
         selected_answer = answer_3
 
     }
@@ -30,10 +39,12 @@ function answer(a) {
     else {
         selected_answer = answer_4;
     }
-    
-    if (selected_answer == answer_4) {
+
+    if (selected_answer == answer_4) { // Right answer
         document.getElementById('not-correct').classList.add('d-none');
         document.getElementById('correct').classList.remove('d-none');
+        // Show next button
+        document.getElementById('new-question').classList.remove('d-none');
     }
 
     else {
