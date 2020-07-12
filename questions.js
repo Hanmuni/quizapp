@@ -4,21 +4,27 @@ let answer_1 = 'Frankfurter';
 let answer_2 = 'Bremer';
 let answer_3 = 'Berliner';
 let answer_4 = 'Hamburger';
+let new_question = 0; 
+let progress = 0;
 
 function nextQuestion() {
+    new_question = new_question + 1;
+    progress = new_question * 10;
+    document.getElementById('progress-bar').innerHTML = progress + '%';
+    document.getElementById('progress-bar').style.width = progress + '%';
     if (document.getElementById('question').innerHTML == question_1) {
         document.getElementById('question').innerHTML = question_2;
     }
 
     else {
         document.getElementById('question').innerHTML = question_1;
+        document.getElementById('answer1').innerHTML = answer_1;
+        document.getElementById('answer2').innerHTML = answer_2;
+        document.getElementById('answer3').innerHTML = answer_3;
+        document.getElementById('answer4').innerHTML = answer_4;
+
     }
 
-    document.getElementById('question').innerHTML = question_1;
-    document.getElementById('answer1').innerHTML = answer_1;
-    document.getElementById('answer2').innerHTML = answer_2;
-    document.getElementById('answer3').innerHTML = answer_3;
-    document.getElementById('answer4').innerHTML = answer_4;
 }
 
 function answer(a) {
