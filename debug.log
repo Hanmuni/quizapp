@@ -66,3 +66,7 @@
 [0714/151748.614:ERROR:crash_report_database_win.cc(446)] failed to read records
 [0714/151748.614:ERROR:file_io.cc(89)] ReadExactly: expected 616, observed 0
 [0714/151748.614:ERROR:crash_report_database_win.cc(446)] failed to read records
+[0714/152248.639:ERROR:file_io.cc(89)] ReadExactly: expected 616, observed 0
+[0714/152248.639:ERROR:crash_report_database_win.cc(446)] failed to read records
+[0715/170006.061:ERROR:file_io.cc(89)] ReadExactly: expected 616, observed 0
+[0715/170006.061:ERROR:crash_report_database_win.cc(446)] failed to read records
