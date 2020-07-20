@@ -22,61 +22,76 @@
     <div class="card-header">
       <h1>QuizApp</h1>
     </div>
-    <div class="card-body">
-      <h5 class="card-title"> Deine Frage </h5>
-      <div class="card">
+    <div class="d-none" id="quiz-end-container">
+      <h2> Herzlichen Glückwünsch. Das Quiz ist erfolgreich beendet.</h2>
+      <img src="img/finish.jpg"> 
+    </div>
+     
+  
 
-        <div class="progress">
-          <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;">10%</div>
+    <div id="quiz-container">
+      <div class="card-body">
+        <h5 class="card-title"> Deine Frage </h5>
+        <div class="card">
+
+          <div class="progress">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;">10%</div>
+          </div>
+
+          <div class="card-body" id="question">
+            Hier ist die Frage
+          </div>
+
+          <div id="correct" class="alert alert-success d-none" role="alert">
+            Es ist richtig!
+          </div>
+
+          <div id="not-correct" class="alert alert-danger d-none" role="alert">
+            Leider falsch!
+          </div>
         </div>
+        <div class="mt-3">
 
-        <div class="card-body" id="question">
-          Hier ist die Frage
-        </div>
+          <div class="answerbox mt-4">
+            <a href="#" onclick="answer(1)" type="button" id="answer1" class="btn btn-outline-primary answerbox-style">
+              Antwort A </a>
+            <a href="#" onclick="answer(2)" type="button" id="answer2" class="btn btn-outline-primary answerbox-style">
+              Antwort B </a>
+          </div>
 
-        <div id="correct" class="alert alert-success d-none" role="alert">
-          Es ist richtig!
-        </div>
+          <div class="answerbox mt-4">
+            <a href="#" onclick="answer(3)" type="button" id="answer3" class="btn btn-outline-primary answerbox-style">
+              Antwort C </a>
+            <a href="#" onclick="answer(4)" type="button" id="answer4" class="btn btn-outline-primary answerbox-style">
+              Antwort D </a>
+          </div>
 
-        <div id="not-correct" class="alert alert-danger d-none" role="alert">
-          Leider falsch!
         </div>
       </div>
-      <div class="mt-3">
 
-        <div class="answerbox mt-4">
-          <a href="#" onclick="answer(1)" type="button" id="answer1" class="btn btn-outline-primary answerbox-style"> Antwort A </a>
-          <a href="#" onclick="answer(2)" type="button" id="answer2" class="btn btn-outline-primary answerbox-style"> Antwort B </a>
-        </div>
-
-        <div class="answerbox mt-4">
-          <a href="#" onclick="answer(3)" type="button" id="answer3" class="btn btn-outline-primary answerbox-style"> Antwort C </a>
-          <a href="#" onclick="answer(4)" type="button" id="answer4" class="btn btn-outline-primary answerbox-style"> Antwort D </a>
-        </div>
+      <div>
+        <button onclick="nextQuestion()" id="new-question" type="button" class="btn btn-info d-none"> Neue Frage
+        </button>
+      </div>
+      <div class="card-footer text-muted">
 
       </div>
-    </div>
-
-    <div>
-      <button onclick="nextQuestion()" id="new-question" type="button" class="btn btn-info d-none"> Neue Frage </button>
-    </div>
-    <div class="card-footer text-muted">
-
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="page-footer font-small bg-dark footer-style">
+  
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark footer-style">
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://developerakademie.com/" target="_blank"> Developer Akademie </a>
-    </div>
-    <!-- Copyright -->
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://developerakademie.com/" target="_blank"> Developer Akademie </a>
+      </div>
+      <!-- Copyright -->
 
-  </footer>
-  <!-- Footer -->
-
+    </footer>
+    <!-- Footer -->
+  
 
 </body>
 

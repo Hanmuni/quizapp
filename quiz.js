@@ -24,7 +24,7 @@ let allQuestions = [
         'answer_3': 'Beim Barbecue wird ein Gas- oder Elektrogrill benutzt.',
         'answer_4': 'Beim Barbecue wird nur Fleisch gegrillt.',
         'right_answer': 2
-    } 
+    }
 ];
 
 let right_answer = 0;
@@ -34,12 +34,18 @@ let progress = 0;
 function nextQuestion() {
     hideElements();
 
-    new_question = new_question + 1;
-    progress = new_question * 10;
-    document.getElementById('progress-bar').innerHTML = progress + '%';
-    document.getElementById('progress-bar').style.width = progress + '%';
+    if (new_question == allQuestions.length) {
+        finishQuiz();
+    }
+    else {
+        new_question = new_question + 1;
+        console.log('Number of questions:',);
+        progress = Math.round((new_question / allQuestions.length) * 100);
+        document.getElementById('progress-bar').innerHTML = progress + '%';
+        document.getElementById('progress-bar').style.width = progress + '%';
 
-    loadQuestion();
+        loadQuestion();
+    }
 }
 
 function loadQuestion() {
@@ -71,4 +77,8 @@ function answer(a) {
         document.getElementById('correct').classList.add('d-none');
         document.getElementById('not-correct').classList.remove('d-none');
     }
+}
+function finishQuiz() {
+    document.getElementById('quiz-container').classList.add('d-none');
+    document.getElementById('quiz-end-container').classList.remove('d-none');   
 }
