@@ -1,35 +1,18 @@
-let allQuestions = [
-    {
-        'question': 'Wie nennt man ein mit gebratenem Hackfleich belegtes Brötchen?',
-        'answer_1': 'Frankfurter',
-        'answer_2': 'Bremer',
-        'answer_3': 'Berliner',
-        'answer_4': 'Hamburger',
-        'right_answer': 4
-    },
-
-    {
-        'question': 'Was ist ein Pharisäer?',
-        'answer_1': 'Kaffee mit Rum',
-        'answer_2': 'Kakao mit Rum',
-        'answer_3': 'Tee mit Rum',
-        'answer_4': 'Fruchtsaft mit Rum',
-        'right_answer': 1
-    },
-
-    {
-        'question': 'Was ist der Unterschied zwischen Grillen und Barbecue?',
-        'answer_1': 'Es gibt keinen. Es ist nur der englischsprachige Begriff fürs Grillen.',
-        'answer_2': 'Beim Barbecue gart das Fleisch mehrere Stunden in heißem Rauch und schmort geschlossen wie in einem Backofen, während es beim Grillen direkt über der Glut brutzelt.',
-        'answer_3': 'Beim Barbecue wird ein Gas- oder Elektrogrill benutzt.',
-        'answer_4': 'Beim Barbecue wird nur Fleisch gegrillt.',
-        'right_answer': 2
-    }
-];
+let allQuestions;
 
 let right_answer = 0;
 let new_question = 0;
 let progress = 0;
+
+function init() {
+
+    fetch('./questions/html.json')
+        .then(function (response) {
+            allQuestions = response.json();
+            nextQuestion();
+        });
+}
+
 
 function nextQuestion() {
     hideElements();
@@ -80,5 +63,5 @@ function answer(a) {
 }
 function finishQuiz() {
     document.getElementById('quiz-container').classList.add('d-none');
-    document.getElementById('quiz-end-container').classList.remove('d-none');   
+    document.getElementById('quiz-end-container').classList.remove('d-none');
 }
