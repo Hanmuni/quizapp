@@ -5,14 +5,13 @@ let new_question = 0;
 let progress = 0;
 
 function init() {
-
     fetch('./questions/html.json')
-        .then(function (response) {
-            allQuestions = response.json();
+	    .then(response => response.json())
+        .then(function (myJSON) {
+            allQuestions = myJSON;
             nextQuestion();
-        });
+        } );
 }
-
 
 function nextQuestion() {
     hideElements();
